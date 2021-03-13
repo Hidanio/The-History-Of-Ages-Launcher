@@ -21,7 +21,7 @@ namespace The_History_Of_Ages_Launcher
         public MainMenuForm()
         {
             InitializeComponent();
-            if (Registry.GetValue(@"HKEY_CURRENT_USER\Software\ThoaLauncher", "GamePath", null) == null)
+            if (Registry.GetValue(@"HKEY_CURRENT_USER\Software\ThoaLauncher", "PathEXE", null) == null)
             {
                 var PathForm = new PathEditForm();
                 PathForm.ShowDialog();
