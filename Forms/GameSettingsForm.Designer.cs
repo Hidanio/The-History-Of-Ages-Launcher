@@ -52,7 +52,8 @@ namespace The_History_Of_Ages_Launcher.Forms
             this.ResolutionComboBox.FormattingEnabled = true;
             this.ResolutionComboBox.Items.AddRange(new object[] {
             "1920 1080",
-            "1280 1080"});
+            "1280 1080",
+            "1366 768"});
             this.ResolutionComboBox.Location = new System.Drawing.Point(79, 116);
             this.ResolutionComboBox.Name = "ResolutionComboBox";
             this.ResolutionComboBox.Size = new System.Drawing.Size(141, 21);

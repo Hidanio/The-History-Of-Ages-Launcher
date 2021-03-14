@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using The_History_Of_Ages_Launcher.Classes;
 
 namespace The_History_Of_Ages_Launcher.Forms
 {
     public partial class GameSettingsForm : Form
     {
+        public static BfmeIniParser GameSettings = new BfmeIniParser();
         public GameSettingsForm()
         {
             InitializeComponent();
+            GameSettings.SetParsedIni(GameSettings.ParserIni());
         }
 
         private void ChangeReg_Button_Click(object sender, EventArgs e)
@@ -30,8 +33,8 @@ namespace The_History_Of_Ages_Launcher.Forms
             var Resolution = ResolutionComboBox.Text;
             var Graphic = GraphicComboBox.Text;
 
-            MainMenuForm.GameSettings.EditIniOption("Resolution", Resolution);
-            MainMenuForm.GameSettings.EditIniOption("StaticGameLOD", Graphic);
+            GameSettings.EditIniOption("Resolution", Resolution);
+            GameSettings.EditIniOption("StaticGameLOD", Graphic);
         }
     }
 }

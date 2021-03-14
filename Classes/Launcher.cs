@@ -34,6 +34,17 @@ namespace The_History_Of_Ages_Launcher.Classes
         public void SetPathRegedit(string value)
         {
             _pathRegedit = value;
+            var currentUserKey = Registry.CurrentUser;
+            var SoftwareKey = currentUserKey.OpenSubKey("Software", true);
+            var SubSoftLauncherKey = SoftwareKey?.OpenSubKey("ThoaLauncher", true);
+            if (SubSoftLauncherKey != null)
+            {
+                SubSoftLauncherKey.SetValue("PathEXE", _pathRegedit);
+                SubSoftLauncherKey.Close();
+                SoftwareKey.Close();
+            }
+
+
         }
         public string GetPathRegedit()
         {
@@ -43,15 +54,15 @@ namespace The_History_Of_Ages_Launcher.Classes
         {
             var currentUserKey = Registry.CurrentUser;
             var SoftwareKey = currentUserKey.OpenSubKey("Software", true);
-            var SubSoftLauncherKey = SoftwareKey?.CreateSubKey("ThoaLauncher");
+                    var SubSoftLauncherKey = SoftwareKey?.CreateSubKey("ThoaLauncher");
 
-            if (SubSoftLauncherKey != null)
-            {
-                SubSoftLauncherKey.SetValue(fieldName, pathRegedit);
-                SubSoftLauncherKey.Close();
-            }
+                    if (SubSoftLauncherKey != null)
+                    {
+                        SubSoftLauncherKey.SetValue(fieldName, pathRegedit);
+                        SubSoftLauncherKey.Close();
+                        SoftwareKey?.Close();
+                    }
 
-            SoftwareKey?.Close();
         }
 
         public string GetRegeditValue(string regValue)
@@ -59,13 +70,15 @@ namespace The_History_Of_Ages_Launcher.Classes
             var currentUserKey = Registry.CurrentUser;
             var SoftwareKey = currentUserKey.OpenSubKey("Software", true);
             var SubSoftLauncherKey = SoftwareKey?.OpenSubKey("ThoaLauncher",true);
-            if (SubSoftLauncherKey == null) 
+            if (SubSoftLauncherKey == null)
+            {
+                SubSoftLauncherKey.Close();
+                SoftwareKey.Close();
                 return null;
+            }
 
             var Path = SubSoftLauncherKey.GetValue(regValue).ToString();
 
-            SubSoftLauncherKey.Close();
-            SoftwareKey.Close();
             return Path;
 
         }

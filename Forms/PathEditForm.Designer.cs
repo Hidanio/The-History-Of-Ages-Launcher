@@ -61,6 +61,7 @@ namespace The_History_Of_Ages_Launcher.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Path_button);
             this.Name = "PathEditForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "PathEditForm";
             this.ResumeLayout(false);
             this.PerformLayout();

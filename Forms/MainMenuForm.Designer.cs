@@ -32,7 +32,7 @@ namespace The_History_Of_Ages_Launcher
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             this.Launch_button = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.languageBox = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.GameInterface_button = new System.Windows.Forms.Button();
             this.Vk_LinkLabel = new System.Windows.Forms.LinkLabel();
@@ -54,13 +54,13 @@ namespace The_History_Of_Ages_Launcher
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // languageBox
             // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.languageBox, "languageBox");
+            this.languageBox.Checked = true;
+            this.languageBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.languageBox.Name = "languageBox";
+            this.languageBox.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -105,7 +105,7 @@ namespace The_History_Of_Ages_Launcher
             this.Controls.Add(this.Vk_LinkLabel);
             this.Controls.Add(this.GameInterface_button);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.languageBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Launch_button);
             this.Name = "MainMenuForm";
@@ -118,7 +118,7 @@ namespace The_History_Of_Ages_Launcher
 
         private System.Windows.Forms.Button Launch_button;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox languageBox;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button GameInterface_button;
         private System.Windows.Forms.LinkLabel Vk_LinkLabel;

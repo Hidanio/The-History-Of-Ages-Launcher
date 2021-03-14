@@ -18,7 +18,8 @@ namespace The_History_Of_Ages_Launcher
     public partial class MainMenuForm : Form
     {
         public static Launcher RegSettings = new Launcher();
-        public static BfmeIniParser GameSettings = new BfmeIniParser();
+
+        
         public MainMenuForm()
         {
             InitializeComponent();
@@ -28,7 +29,6 @@ namespace The_History_Of_Ages_Launcher
                 PathForm.ShowDialog();
                 RegSettings.CreateRegeditKey(RegSettings.GetPathRegedit(), "PathEXE");
             }
-            GameSettings.SetParsedIni(GameSettings.ParserIni());
         }
 
 
@@ -42,12 +42,26 @@ namespace The_History_Of_Ages_Launcher
 
         private void Launch_button_Click(object sender, EventArgs e)
         {
-            // TODO: добавить проверку языка
-            var LaunchGamePath = RegSettings.GetRegeditValue("PathEXE");
-            if (LaunchGamePath != null)
-                Process.Start(LaunchGamePath);
-            else
-                MessageBox.Show("Ошибка", "Путь к игре не найден.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         InterfaceManipulator Language = new InterfaceManipulator();
+         if (languageBox.Checked)
+         {
+             Language.ChangeLanguage(true);
+             var LaunchGamePath = RegSettings.GetRegeditValue("PathEXE");
+             if (LaunchGamePath != null)
+                 Process.Start(LaunchGamePath);
+             else
+                 MessageBox.Show("Ошибка", "Путь к игре не найден.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
+         else
+         {
+             Language.ChangeLanguage(false);
+             var LaunchGamePath = RegSettings.GetRegeditValue("PathEXE");
+             if (LaunchGamePath != null)
+                 Process.Start(LaunchGamePath);
+             else
+                 MessageBox.Show("Ошибка", "Путь к игре не найден.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
+            
         }
 
         private void Vk_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BfmeIniParser.cs" />
+    <Compile Include="Classes\InterfaceManipulator.cs" />
     <Compile Include="Classes\Launcher.cs" />
     <Compile Include="Forms\GameSettingsForm.cs">
       <SubType>Form</SubType>

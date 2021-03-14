@@ -171,31 +171,31 @@
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="languageBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="languageBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 12</value>
   </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="languageBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 17</value>
   </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="languageBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="checkBox1.Text" xml:space="preserve">
+  <data name="languageBox.Text" xml:space="preserve">
     <value>Русский язык</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
+  <data name="&gt;&gt;languageBox.Name" xml:space="preserve">
+    <value>languageBox</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;languageBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;languageBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;languageBox.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
