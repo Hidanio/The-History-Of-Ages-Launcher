@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,31 +26,53 @@ namespace The_History_Of_Ages_Launcher.Classes
 
     public  class Launcher
     {
-        public string PathRegedit;
-
-        public void CreateRegeditKey(string PathRegedit)
+        public string GetPathOption()
         {
-            RegistryKey currentUserKey = Registry.CurrentUser;
-            RegistryKey SoftwareKey = currentUserKey.OpenSubKey("Software", true);
-            RegistryKey SubSoftLauncherKey = SoftwareKey.CreateSubKey("ThoaLauncher");
-
-            SubSoftLauncherKey.SetValue("PathEXE", PathRegedit);
-            SubSoftLauncherKey.Close();
-            SoftwareKey.Close();
+            return _pathOption;
         }
 
-        public string GetRegeditPathExeValue()
+        public void SetPathRegedit(string value)
         {
-            RegistryKey currentUserKey = Registry.CurrentUser;
-            RegistryKey SoftwareKey = currentUserKey.OpenSubKey("Software", true);
-            RegistryKey SubSoftLauncherKey = SoftwareKey.OpenSubKey("ThoaLauncher",true);
+            _pathRegedit = value;
+        }
+        public string GetPathRegedit()
+        {
+            return _pathRegedit;
+        }
+        public void CreateRegeditKey(string pathRegedit, string fieldName)
+        {
+            var currentUserKey = Registry.CurrentUser;
+            var SoftwareKey = currentUserKey.OpenSubKey("Software", true);
+            var SubSoftLauncherKey = SoftwareKey?.CreateSubKey("ThoaLauncher");
 
-            string Path = SubSoftLauncherKey.GetValue("PathEXE").ToString();
+            if (SubSoftLauncherKey != null)
+            {
+                SubSoftLauncherKey.SetValue(fieldName, pathRegedit);
+                SubSoftLauncherKey.Close();
+            }
+
+            SoftwareKey?.Close();
+        }
+
+        public string GetRegeditValue(string regValue)
+        {
+            var currentUserKey = Registry.CurrentUser;
+            var SoftwareKey = currentUserKey.OpenSubKey("Software", true);
+            var SubSoftLauncherKey = SoftwareKey?.OpenSubKey("ThoaLauncher",true);
+            if (SubSoftLauncherKey == null) 
+                return null;
+
+            var Path = SubSoftLauncherKey.GetValue(regValue).ToString();
 
             SubSoftLauncherKey.Close();
             SoftwareKey.Close();
             return Path;
+
         }
 
+
+        private string _pathRegedit;
+        private string _pathOption = Path.Combine(Environment.GetFolderPath(
+        Environment.SpecialFolder.ApplicationData), "My The History Of Ages™ Mod Files\\Options.ini");
     }
 }

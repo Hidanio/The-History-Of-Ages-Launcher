@@ -30,8 +30,8 @@ namespace The_History_Of_Ages_Launcher.Forms
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    MainMenuForm.Settings.PathRegedit = openFileDialog.FileName;
-                    this.Close();
+                    MainMenuForm.RegSettings.SetPathRegedit(openFileDialog.FileName);
+                    Close();
                 }
             }
         }

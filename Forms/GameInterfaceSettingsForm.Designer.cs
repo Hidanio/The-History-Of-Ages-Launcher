@@ -34,7 +34,7 @@ namespace The_History_Of_Ages_Launcher
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(120, 355);
+            this.button1.Location = new System.Drawing.Point(139, 301);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 38);
             this.button1.TabIndex = 0;
@@ -45,8 +45,10 @@ namespace The_History_Of_Ages_Launcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(390, 507);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GameInterfaceSettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "GameInterfaceSettings";

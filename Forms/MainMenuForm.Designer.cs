@@ -37,7 +37,8 @@ namespace The_History_Of_Ages_Launcher
             this.GameInterface_button = new System.Windows.Forms.Button();
             this.Vk_LinkLabel = new System.Windows.Forms.LinkLabel();
             this.Fb_LinkLabel = new System.Windows.Forms.LinkLabel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.GameSetting_button = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // Launch_button
@@ -88,17 +89,18 @@ namespace The_History_Of_Ages_Launcher
             this.Fb_LinkLabel.TabStop = true;
             this.Fb_LinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Fb_LinkLabel_LinkClicked);
             // 
-            // button5
+            // GameSetting_button
             // 
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.GameSetting_button, "GameSetting_button");
+            this.GameSetting_button.Name = "GameSetting_button";
+            this.GameSetting_button.UseVisualStyleBackColor = true;
+            this.GameSetting_button.Click += new System.EventHandler(this.GameSetting_button_Click);
             // 
             // MainMenuForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.GameSetting_button);
             this.Controls.Add(this.Fb_LinkLabel);
             this.Controls.Add(this.Vk_LinkLabel);
             this.Controls.Add(this.GameInterface_button);
@@ -121,7 +123,8 @@ namespace The_History_Of_Ages_Launcher
         private System.Windows.Forms.Button GameInterface_button;
         private System.Windows.Forms.LinkLabel Vk_LinkLabel;
         private System.Windows.Forms.LinkLabel Fb_LinkLabel;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button GameSetting_button;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

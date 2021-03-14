@@ -17,7 +17,8 @@ namespace The_History_Of_Ages_Launcher
     
     public partial class MainMenuForm : Form
     {
-        public static Launcher Settings = new Launcher();
+        public static Launcher RegSettings = new Launcher();
+        public static BfmeIniParser GameSettings = new BfmeIniParser();
         public MainMenuForm()
         {
             InitializeComponent();
@@ -25,17 +26,16 @@ namespace The_History_Of_Ages_Launcher
             {
                 var PathForm = new PathEditForm();
                 PathForm.ShowDialog();
-                Settings.CreateRegeditKey(Settings.PathRegedit);
+                RegSettings.CreateRegeditKey(RegSettings.GetPathRegedit(), "PathEXE");
             }
+            GameSettings.SetParsedIni(GameSettings.ParserIni());
         }
 
 
         private void GameInterface_button_Click(object sender, EventArgs e)
         {
             Hide();
-            var InterfaceSettings = new GameInterfaceSettingsForm();
-            InterfaceSettings.Left = this.Left; // задаём открываемой форме позицию слева равную позиции текущей формы
-            InterfaceSettings.Top = this.Top; // задаём открываемой форме позицию сверху равную позиции текущей формы
+            var InterfaceSettings = new GameInterfaceSettingsForm {Left = Left, Top = Top};
             InterfaceSettings.ShowDialog();
             Show();
         }
@@ -43,13 +43,16 @@ namespace The_History_Of_Ages_Launcher
         private void Launch_button_Click(object sender, EventArgs e)
         {
             // TODO: добавить проверку языка
-            string LaunchGamePath = Settings.GetRegeditPathExeValue();
-            Process.Start(LaunchGamePath); //
+            var LaunchGamePath = RegSettings.GetRegeditValue("PathEXE");
+            if (LaunchGamePath != null)
+                Process.Start(LaunchGamePath);
+            else
+                MessageBox.Show("Ошибка", "Путь к игре не найден.", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Vk_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string url = "https://vk.com/thoakodding";
+            const string url = "https://vk.com/thoakodding";
             var si = new ProcessStartInfo(url);
             Process.Start(si);
             Vk_LinkLabel.LinkVisited = true;
@@ -57,12 +60,18 @@ namespace The_History_Of_Ages_Launcher
 
         private void Fb_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string url = "https://www.facebook.com/Battle-for-Middle-earth-The-History-of-Ages-104300344528100/";
+            const string url = "https://www.facebook.com/Battle-for-Middle-earth-The-History-of-Ages-104300344528100/";
             var si = new ProcessStartInfo(url);
             Process.Start(si);
             Fb_LinkLabel.LinkVisited = true;
         }
 
- 
+        private void GameSetting_button_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var GameSettings = new GameSettingsForm {Left = Left, Top = Top};
+            GameSettings.ShowDialog();
+            Show();
+        }
     }
 }
