@@ -31,14 +31,12 @@ namespace The_History_Of_Ages_Launcher
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             this.Launch_button = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.WorldBuilderButton = new System.Windows.Forms.Button();
             this.languageBox = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.GameInterface_button = new System.Windows.Forms.Button();
             this.Vk_LinkLabel = new System.Windows.Forms.LinkLabel();
             this.Fb_LinkLabel = new System.Windows.Forms.LinkLabel();
             this.GameSetting_button = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // Launch_button
@@ -48,11 +46,12 @@ namespace The_History_Of_Ages_Launcher
             this.Launch_button.UseVisualStyleBackColor = true;
             this.Launch_button.Click += new System.EventHandler(this.Launch_button_Click);
             // 
-            // button2
+            // WorldBuilderButton
             // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.WorldBuilderButton, "WorldBuilderButton");
+            this.WorldBuilderButton.Name = "WorldBuilderButton";
+            this.WorldBuilderButton.UseVisualStyleBackColor = true;
+            this.WorldBuilderButton.Click += new System.EventHandler(this.WorldBuilderButton_Click);
             // 
             // languageBox
             // 
@@ -61,12 +60,6 @@ namespace The_History_Of_Ages_Launcher
             this.languageBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.languageBox.Name = "languageBox";
             this.languageBox.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // GameInterface_button
             // 
@@ -104,9 +97,8 @@ namespace The_History_Of_Ages_Launcher
             this.Controls.Add(this.Fb_LinkLabel);
             this.Controls.Add(this.Vk_LinkLabel);
             this.Controls.Add(this.GameInterface_button);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.languageBox);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.WorldBuilderButton);
             this.Controls.Add(this.Launch_button);
             this.Name = "MainMenuForm";
             this.ResumeLayout(false);
@@ -117,14 +109,12 @@ namespace The_History_Of_Ages_Launcher
         #endregion
 
         private System.Windows.Forms.Button Launch_button;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button WorldBuilderButton;
         private System.Windows.Forms.CheckBox languageBox;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button GameInterface_button;
         private System.Windows.Forms.LinkLabel Vk_LinkLabel;
         private System.Windows.Forms.LinkLabel Fb_LinkLabel;
         private System.Windows.Forms.Button GameSetting_button;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

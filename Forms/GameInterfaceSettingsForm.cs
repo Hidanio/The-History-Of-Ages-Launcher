@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using The_History_Of_Ages_Launcher.Classes;
 
 namespace The_History_Of_Ages_Launcher
 {
@@ -19,6 +20,18 @@ namespace The_History_Of_Ages_Launcher
 
         private void GameInterfaceSettings_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void ApplyGameInterfaceButton_Click(object sender, EventArgs e)
+        {
+            InterfaceManipulator ChangeVisual = new InterfaceManipulator();
+            var Palantir = PalantirComboBox.Text;
+            ChangeVisual.ChangePalantir(Palantir);
+   
+            var GameInterface = InterfaceComboBox.Text;
+            ChangeVisual.ChangeGameInterface(GameInterface);
+
 
         }
     }

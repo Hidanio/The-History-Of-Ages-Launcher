@@ -145,31 +145,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Launch_button.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="WorldBuilderButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 143</value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="WorldBuilderButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 42</value>
   </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+  <data name="WorldBuilderButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
+  <data name="WorldBuilderButton.Text" xml:space="preserve">
     <value>World Builder</value>
   </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
+  <data name="&gt;&gt;WorldBuilderButton.Name" xml:space="preserve">
+    <value>WorldBuilderButton</value>
   </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+  <data name="&gt;&gt;WorldBuilderButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;WorldBuilderButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;WorldBuilderButton.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="languageBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -196,34 +196,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;languageBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 216</value>
-  </data>
-  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 44</value>
-  </data>
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="button3.Text" xml:space="preserve">
-    <value>Палантиры</value>
-  </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
-  </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="GameInterface_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 290</value>
+    <value>123, 214</value>
   </data>
   <data name="GameInterface_button.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 43</value>
@@ -301,7 +277,7 @@
     <value>1</value>
   </data>
   <data name="GameSetting_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 366</value>
+    <value>123, 287</value>
   </data>
   <data name="GameSetting_button.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 41</value>
@@ -324,9 +300,6 @@
   <data name="&gt;&gt;GameSetting_button.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -344,12 +317,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>MainMenu</value>
-  </data>
-  <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
-    <value>backgroundWorker1</value>
-  </data>
-  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainMenuForm</value>

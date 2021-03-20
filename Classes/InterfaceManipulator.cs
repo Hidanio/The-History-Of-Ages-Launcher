@@ -74,7 +74,83 @@ namespace The_History_Of_Ages_Launcher.Classes
              }
          }
      }
+        //TODO: доделать копирование загрузочного экрана
+     public void ChangeGameInterface(string InterfaceChoice)
+     {
+         var Path = GetGamePath();
+         string[] GameIterfaces =
+         {
+             Path + "\\Alternative Interface\\Angmar\\__THOA_Art_Angmar.big",
+             Path + "\\Alternative Interface\\BFME\\__THOA_Art_BFME.big",
+             Path + "\\Alternative Interface\\BFME 2\\__THOA_Art_BFME2.big",
+             Path + "\\Alternative Interface\\Dwarf\\__THOA_Art_Dwarf.big",
+             Path + "\\Alternative Interface\\Elf\\__THOA_Art_Elf.big",
+             Path + "\\Alternative Interface\\Rohan\\__THOA_Art_Rohan.big",
+             Path + "\\Alternative Interface\\ROTWK\\__THOA_Art_ROTWK.big",
+             Path + "\\Alternative Interface\\THOA\\__THOA_Art_THOA.big"
+         };
 
+         string[] FilesName =
+         {
+             "__THOA_Art_Angmar.big", "__THOA_Art_BFME.big", "__THOA_Art_BFME2.big",
+             "__THOA_Art_Dwarf.big", "__THOA_Art_Elf.big", "__THOA_Art_Rohan.big",
+             "__THOA_Art_ROTWK.big","__THOA_Art_THOA.big"
+         };
+         DeleteFiles(FilesName);
+         switch (InterfaceChoice)
+         {
+             case "Angmar":
+                 File.Copy(GameIterfaces[0], Path + "\\" + "__THOA_Art_Angmar.big", true);
+                 break;
+             case "BFME":
+                 File.Copy(GameIterfaces[1], Path + "\\" + "__THOA_Art_BFME.big", true);
+                 break;
+             case "BFME 2":
+                 File.Copy(GameIterfaces[2], Path + "\\" + "__THOA_Art_BFME2.big", true);
+                 break;
+             case "Dwarf":
+                 File.Copy(GameIterfaces[3], Path + "\\" + "__THOA_Art_Dwarf.big", true);
+                 break;
+             case "Elf":
+                 File.Copy(GameIterfaces[4], Path + "\\" + "__THOA_Art_Elf.big", true);
+                 break;
+             case "Rohan":
+                 File.Copy(GameIterfaces[5], Path + "\\" + "__THOA_Art_Rohan.big", true);
+                 break;
+             case "ROTWK":
+                 File.Copy(GameIterfaces[6], Path + "\\" + "__THOA_Art_ROTWK.big", true);
+                 break;
+             case "THOA":
+                 File.Copy(GameIterfaces[7], Path + "\\" + "__THOA_Art_THOA.big", true);
+                 break;
+         }
+     }
+        public void ChangePalantir(string PalantirChoice)
+        {
+            var Path = GetGamePath();
+            string[] Palantirs = {
+                Path+ "\\Alternative Interface\\Palantir_Alternative\\__Palantir.big",
+                Path+ "\\Alternative Interface\\Palantir_Alternative\\__Palantir_THOA.big", 
+                Path+ "\\Alternative Interface\\Palantir_Alternative\\__Palantir_THOA_Ice.big",
+                Path+ "\\Alternative Interface\\Palantir_Alternative\\__PALAntirr_History .big"
+            };
+            DeleteFiles(Directory.GetFiles(GetGamePath()+ "\\Alternative Interface\\Palantir_Alternative"));
+            switch (PalantirChoice)
+            {
+                case "Default Palantir": 
+                    File.Copy(Palantirs[0], Path + "\\" + "__Palantir.big", true);
+                    break;
+                case "THOA Palantir":
+                    File.Copy(Palantirs[1], Path + "\\" + "__Palantir_THOA.big", true);
+                    break;
+                case "THOA Winter":
+                    File.Copy(Palantirs[2], Path + "\\" + "__Palantir_THOA_Ice.big", true);
+                    break;
+                case "THOA History":
+                    File.Copy(Palantirs[3], Path + "\\" + "__PALAntirr_History .big", true);
+                    break;
+            }
+        }
      public string[] GetFilesNames(string[] FilesWithPath)
      {
          for (var i = 0; i < FilesWithPath.Length; ++i)

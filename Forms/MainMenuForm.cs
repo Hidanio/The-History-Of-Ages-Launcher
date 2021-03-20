@@ -87,5 +87,23 @@ namespace The_History_Of_Ages_Launcher
             GameSettings.ShowDialog();
             Show();
         }
+
+        private void WorldBuilderButton_Click(object sender, EventArgs e)
+        {
+            InterfaceManipulator WB = new InterfaceManipulator();
+            var Path =  WB.GetGamePath();
+            var length = Path.Length - 1;
+            for (var i = length; i > 0; --i)
+            {
+                if (Path[i] == '\\')
+                {
+                    Path = Path.Substring(0, i);
+                    break;
+                }
+            }
+            Process.Start(Path+ "\\Worldbuilder.exe");
+        }
+
+
     }
 }
